@@ -95,7 +95,7 @@
 
         /* Services */
         .factory('Projects', ['$resource', ($resource) => {
-            return $resource('/api/projects/:id', null, {
+            return $resource('/projects/projects.json/:id', null, {
                 'update': {method: 'PUT'}
             });
         }])

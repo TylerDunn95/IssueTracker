@@ -34,13 +34,16 @@ conn
 const Projects = conn.import('../models/IssueTracker_Projects.js')
 const Users = conn.import('../models/IssueTracker_Users.js')
 
+router.get('/', function(req, res, next) {
+  res.render('projects', { title: 'Projects' });
+})
 
 /**
  *  GET project listing.
  *  test in bash with:
  *  curl localhost:3000/projects
  */
-router.get('/', (req, res, next) => {
+router.get('/projects.json', (req, res, next) => {
     Projects.findAll()
     .then(projects => {
       console.log(`Found Project: ${projects}`);
