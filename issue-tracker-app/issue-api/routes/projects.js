@@ -24,7 +24,7 @@ const conn = new Sequelize('issueTrackerDB', 'ApolloAdmin', 'IssueTracker2017', 
 conn
     .authenticate()
     .then(() => {
-        console.log('Connection has been established successfully.');
+        console.log('Connection has been established successfully - projects.');
     })
     .catch(err => {
         console.error('Unable to connect to the database:', err);

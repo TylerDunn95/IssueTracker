@@ -1,0 +1,150 @@
+.dsi-logo{
+	position:fixed;
+	padding:5px;
+	width:400px;
+	margin-top:15px;
+	margin-left:15px;
+	z-index:4005;
+	top:0;
+}
+
+/* Smart Phone */
+@media only screen and (min-width:320px)
+and (max-width:480px)
+{
+	#headerwrap h1{
+		font-size:3rem;
+	}
+
+	#headerwrap h2{
+		font-size:2rem;
+	}
+}
+
+/* Tablets */
+@media only screen and (min-width:728px)
+and (max-width:1024px)
+{
+	#headerwrap h1{
+		font-size:7rem;
+	}
+
+	#headerwrap h2{
+		font-size:4rem;
+	}
+}
+
+.dsi-logo h1{
+	width:500px;
+	margin-left:40px;
+	margin-top:0px;
+	/*position:relative;
+	float:left;
+	font-size:1.8rem;*/
+	font-size:2.0rem;
+  	font-weight:bold;
+}
+
+.dsi-logo a h1,
+.dsi-logo a:visited h1,
+.dsi-logo a:hover h1
+{
+	color:#000!important;
+}
+
+.dsi-logo a h1 em,
+.dsi-logo a:visited h1 em,
+.dsi-logo a:hover h1 em
+{
+	color:#cc0000!important;
+}
+
+.dsi-logo a h1 em{
+	/* color:#fff; */
+	font-weight:bold;
+  /* color: #1abc9c; */
+}
+
+.dsi-logo .dsi-dots{
+	position:relative;
+	width:35px;
+	height:30px;
+	float:left;
+	margin-top:6px;
+	opacity:0.5;
+	-moz-opacity:0.8;
+	-webkit-opacity:0.8;
+	filter:alpha(opacity=80);
+}
+
+.dsi-logo .dsi-dots .dsi-dot{
+	width:20%;
+/*	height:16%;*/
+	height:23%;
+	background-color:#000;
+	border-radius:1000px;
+	-moz-border-radius:1000px;
+	-webkit-border-radius:1000px;
+	box-shadow:1px 1px 1px inset #fff;
+	-moz-box-shadow:1px 1px 1px inset #fff;
+	-webkit-box-shadow:1px 1px 1px inset #fff;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-col-1,
+.dsi-logo .dsi-dots .dsi-dot-col-2,
+.dsi-logo .dsi-dots .dsi-dot-col-3,
+.dsi-logo .dsi-dots .dsi-dot-col-4{
+	position:absolute;
+	margin-left:2%;
+}
+
+
+.dsi-logo .dsi-dots .dsi-dot-col-1{
+	left:0;
+	background-color:#000;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-col-2{
+	left:25%;
+	/* background-color:#fff; */
+  background-color: #cc0000;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-col-3{
+	left:50%;
+	background-color:#000;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-col-4{
+	left:75%;
+	/* background-color:#fff; */
+  background-color: #cc0000;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-row-5{
+	bottom:0;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-row-4{
+	bottom:26%;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-row-3{
+	bottom:52%;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-row-2{
+	bottom:76%;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-row-1{
+	bottom:104%;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-on{
+	background-color:#f00;
+}
+
+.dsi-logo .dsi-dots .dsi-dot-off{
+	background-color:#000;
+}
