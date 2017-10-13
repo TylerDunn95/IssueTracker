@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>IssueTracker</title>
+    <!-- angular  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <!-- ng routes -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+    <!-- app -->
+    <script src="app.js"></script>
+    <!-- custom bootstrap -->
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- custom styles -->
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <nav class="navbar navbar-default square-corners">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">IssueTracker</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Time Entries<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Another Link</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Welcome, Tyler</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+    <h1><center>Create User</center></h1>
+
+    <ng-view></ng-view>
+
+
+    <script type='text/ng-template' id="/time-entries.html">
+        <!-- {{ TimeEntries }} -->
+
+        <i class="fa fa-angle-double-left fa-2x" aria-hidden="true"></i>
+        <span class="date-text">&nbsp; Sept 22 - Sept 28 &nbsp; </span>
+        <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr class="active">
+                <th class="col-xs-2">Project</th>
+                <th class="col-xs-2">Issue</th>
+                <th class="col-xs-1">Mon 20</th>
+                <th class="col-xs-1">Tue 21</th>
+                <th class="col-xs-1">Wed 22</th>
+                <th class="col-xs-1">Thu 23</th>
+                <th class="col-xs-1">Fri 24</th>
+                <th ng-show="showWeekend" class="col-xs-1">Sat 25</th>
+                <th ng-show="showWeekend" class="col-xs-1">Sun 26</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="e in entries">
+                <td>
+                    <select class="form-control" id="entry_{{$index}}_project">
+                        <option>Select a Project</option>
+                        <option ng-repeat="p in projects">{{ p.name }}</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-control" id="sel1">
+                        <option>Select an Issue</option>
+                        <option ng-repeat="t in projects[0].tasks">{{ t }}</option>
+                    </select>
+                    <!-- <select class="form-control">
+                    </select>  -->
+                </td>
+                <td> <input class="form-control" value="{{ e.hours[0] }}" onFocus="this.select()"/></td>
+                <td> <input class="form-control" value="{{ e.hours[1] }}" onFocus="this.select()"/></td>
+                <td> <input class="form-control" value="{{ e.hours[2] }}" onFocus="this.select()"/></td>
+                <td> <input class="form-control" value="{{ e.hours[3] }}" onFocus="this.select()"/></td>
+                <td> <input class="form-control" value="{{ e.hours[4] }}" onFocus="this.select()"/></td>
+                <td ng-show="showWeekend"> <input class="form-control" value="{{ e.hours[5] }}" /></td>
+                <td ng-show="showWeekend"> <input class="form-control" value="{{ e.hours[6] }}" /></td>
+              </tr>
+              <tr>
+                  <td>
+                      <span class="glyphicon glyphicon-plus"></span>
+                      <a href="" ng-click="addEntry()">Click here to add issue</a>
+                  </td>
+                  <td>
+                      Show Weekend: &nbsp;
+                      <input ng-model="showWeekend" type="checkbox" />
+                  </td>
+              </tr>
+
+            </tbody>
+          </table>
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary">Submit for Approval</button>
+    </script>
+</body>
+</html>
